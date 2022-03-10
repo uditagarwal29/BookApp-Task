@@ -1,0 +1,54 @@
+<html>
+
+<head></head>
+<link rel="stylesheet" href="/css/home.css">
+
+<body>
+    <!-- This is dynamic and can be changes as value in index.js changes -->
+    <h1>
+        <%= heading%>
+    </h1>
+    <div>
+        <ul>
+            <% for(let i of user_list) { %>
+                <li>
+                    <div>
+                        <p>
+                            MongoID : <%= i._id %>
+                        </p>
+                        <p>
+                            Name : <%= i.name %>
+                        </p>
+                        <p>
+                            Email : <%= i.email %>
+                        </p>
+                        <p>
+                            Referred User : <%if(i.referredUser){ %>
+                                <%=i.referredUser%>
+                                    <%}else { %>
+                                        null
+                                        <% } %>
+                        </p>
+                        <p>
+                            <strong>Payment Made ? </strong> <%= i.isPaymentMade %>
+                        </p>
+                        <p>
+                            <strong>Total Earnings : </strong> <%= i.totalEarnings %>
+                        </p>
+                    </div>
+                </li>
+                <% } %>
+        </ul>
+    </div>
+    <!-- form posts form data to /create-contact route-->
+    <h3>CREATE USERS</h3>
+    <form action="/create-user" method="POST">
+        <input type="text" name="name" placeholder="Enter Name" required>
+        <input type="email" name="email" placeholder="Enter Email" required>
+        <input type="email" name="referredUser" placeholder="Enter Referred User Email">
+        <button type="submit">Add Contact</button>
+    </form>
+    <script type="text/javascript" src="/js/home.js"></script>
+</body>
+
+</html>

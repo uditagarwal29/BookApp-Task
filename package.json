@@ -1,0 +1,19 @@
+{
+  "name": "booksapp-api",
+  "version": "1.0.0",
+  "description": "BooksApp Web Developer Assessment Task",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Udit Agarwal",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "mongodb": "^4.4.1",
+    "mongoose": "^6.2.5",
+    "nodemon": "^2.0.15"
+  }
+}
